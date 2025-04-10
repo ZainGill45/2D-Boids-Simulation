@@ -17,6 +17,6 @@ public class DebugDrawer : MonoBehaviour
     {
         if (boids.Count > 0)
             foreach (Boid boid in boids)
-                Debug.DrawLine(boid.transform.position, boid.transform.position + -boid.transform.up * lineLength);
+                Debug.DrawLine(boid.transform.position, boid.transform.position + -boid.transform.up * lineLength, Color.red);
     }
 }
