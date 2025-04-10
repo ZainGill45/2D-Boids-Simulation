@@ -4,9 +4,9 @@ using UnityEngine;
 public class DebugDrawer : MonoBehaviour
 {
     [field: Header("General Settings")]
-    [field: SerializeField] private float lineLength = 0.5f;
-    [field: SerializeField] private float xBounds = 8f;
-    [field: SerializeField] private float yBounds = 4f;
+    [field: SerializeField] private float lineLength = 0.45f;
+    [field: SerializeField] private float xBounds = 8.25f;
+    [field: SerializeField] private float yBounds = 4.35f;
 
     public static List<Boid> boids;
 
