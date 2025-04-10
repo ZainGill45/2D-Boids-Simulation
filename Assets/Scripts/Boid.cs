@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Boids : MonoBehaviour
+public class Boid : MonoBehaviour
 {
     private void OnEnable()
     {

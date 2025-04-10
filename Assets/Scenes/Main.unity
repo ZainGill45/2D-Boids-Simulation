@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 336487443}
   - component: {fileID: 336487444}
+  - component: {fileID: 336487445}
   m_Layer: 0
   m_Name: Environment
   m_TagString: Untagged
@@ -166,6 +167,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineLength: 1
+--- !u!114 &336487445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336487442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 080e5daca3e1415409639ad10d96986b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boidPrefab: {fileID: 4599108509270218401, guid: 87c7dd749a0906f4abb1bff164e134d7, type: 3}
+  boidCount: 20
+  spawnXBounds: 6
+  spawnYBounds: 4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
