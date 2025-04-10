@@ -6,22 +6,35 @@ public class BoidSpawner : MonoBehaviour
     [field: SerializeField] private Transform boidPrefab;
     
     [field: Header("General Settings")]
-    [field: SerializeField] private int boidCount = 20;
     [field: SerializeField] private float spawnXBounds = 6f;
     [field: SerializeField] private float spawnYBounds = 4f;
+    [field: SerializeField] private int boidCount = 32;
 
+    private PolygonCollider2D boidCollider;
+
+    private void Awake()
+    {
+        boidCollider = boidPrefab.GetComponent<PolygonCollider2D>();
+    }
     private void Start()
     {
         for (int i = 0; i < boidCount; i++)
         {
-            float x = Random.Range(-spawnXBounds, spawnXBounds);
-            float y = Random.Range(-spawnYBounds, spawnYBounds);
-            
-            Vector3 randomPosWithinBounds = new(x, y, 0f);
-            
-            Vector3 randomEulerRotation = new(0f, 0f, Random.Range(0f, 360f));
+            Vector3 randomPosWithinBounds = new (Random.Range(-spawnXBounds, spawnXBounds), Random.Range(-spawnYBounds, spawnYBounds), 0f);
+            Vector3 randomEulerRotation = new (0f, 0f, Random.Range(0f, 360f));
+
+            while (QueryIfCanSpawnColliderAtPosition(randomPosWithinBounds) == false)
+                randomPosWithinBounds = new Vector3(Random.Range(-spawnXBounds, spawnXBounds), Random.Range(-spawnYBounds, spawnYBounds), 0f);
             
             Instantiate(boidPrefab, randomPosWithinBounds, Quaternion.Euler(randomEulerRotation));
         }
+    }
+
+    private bool QueryIfCanSpawnColliderAtPosition(Vector2 position)
+    {
+        Vector2 colliderSize = boidCollider.bounds.size;
+        Collider2D hitCollider = Physics2D.OverlapBox(position, colliderSize, 0f);
+
+        return hitCollider is null;
     }
 }
