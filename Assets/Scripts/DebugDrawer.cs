@@ -1,26 +1,10 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DebugDrawer : MonoBehaviour
 {
     [field: Header("General Settings")]
-    [field: SerializeField] private float lineLength = 0.45f;
     [field: SerializeField] private float xBounds = 8.25f;
     [field: SerializeField] private float yBounds = 4.35f;
-
-    public static List<Boid> boids;
-
-    private void Awake()
-    {
-        boids = new List<Boid>();
-    }
-
-    private void Update()
-    {
-        if (boids.Count > 0)
-            foreach (Boid boid in boids)
-                Debug.DrawLine(boid.transform.position, boid.transform.position + boid.transform.up * lineLength, Color.red);
-    }
 
     private void OnDrawGizmos()
     {

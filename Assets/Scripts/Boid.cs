@@ -8,25 +8,23 @@ using UnityEngine;
 
 public class Boid : MonoBehaviour
 {
-    private void OnEnable()
-    {
-        DebugDrawer.boids.Add(this);
-    }
-    private void OnDisable()
-    {
-        DebugDrawer.boids.Remove(this);
-    }
+    [field: Header("General Dependencies")]
+    [field: SerializeField] private Rigidbody2D physicsBody;
+    
+    [field: Header("General Settings")]
+    [field: SerializeField] private float speed = 2f;
+    [field: SerializeField] private float rotationSpeed = 360f;
 
-    private void OnCollisionEnter(Collision other)
+    private void Update()
     {
-        Debug.Log($"Boid discreet collision with {other.gameObject.name}");
-    }
-    private void OnCollisionStay(Collision other)
-    {
-        Debug.Log($"Boid continuous collision with {other.gameObject.name}");
-    }
-    private void OnCollisionExit(Collision other)
-    {
-        Debug.Log($"Boid discreet exit with {other.gameObject.name}");
+        Debug.DrawRay(transform.position + transform.up * 0.2f, transform.up * 0.5f, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + transform.up * 0.2f, transform.up, 0.5f);
+        
+        if (hit.collider is not null)
+        {
+            transform.localEulerAngles = new Vector3(0f, 0f, transform.localEulerAngles.z + rotationSpeed * Time.deltaTime);
+        }
+        
+        physicsBody.linearVelocity = transform.up * speed;
     }
 }

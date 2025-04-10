@@ -185,3 +185,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7373ac39a88bd48bead06bd0fb868a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  physicsBody: {fileID: 2455127000594165947}
+  speed: 2

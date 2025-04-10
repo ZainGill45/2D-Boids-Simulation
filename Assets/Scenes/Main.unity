@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8005e9600119a44da40c5dc9b1265cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineLength: 0.45
   xBounds: 8.25
   yBounds: 4.35
 --- !u!114 &336487445
@@ -181,10 +180,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 080e5daca3e1415409639ad10d96986b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 519420031}
   boidPrefab: {fileID: 4599108509270218401, guid: 87c7dd749a0906f4abb1bff164e134d7, type: 3}
   spawnXBounds: 8.25
   spawnYBounds: 4.35
-  boidCount: 32
+  boidCount: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

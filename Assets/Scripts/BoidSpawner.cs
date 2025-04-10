@@ -3,6 +3,7 @@ using UnityEngine;
 public class BoidSpawner : MonoBehaviour
 {
     [field: Header("General Dependencies")]
+    [field: SerializeField] private Camera mainCamera;
     [field: SerializeField] private Transform boidPrefab;
     
     [field: Header("General Settings")]
@@ -18,18 +19,30 @@ public class BoidSpawner : MonoBehaviour
     }
     private void Start()
     {
-        SpawnBoids();
+        SpawnBoids(boidCount);
     }
-    
-    [ContextMenu("Respawn Boids")]
-    public void SpawnBoids()
+
+    private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            // Spawn a boid at the where ever the user clicked the mouse
+            Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            Instantiate(boidPrefab, mousePosition, Quaternion.identity);
+        }
+    }
+
+    private void SpawnBoids(int numberOfBoidsToSpawn)
+    {
+        if (numberOfBoidsToSpawn <= 0)
+            return;
+        
         Boid[] boidsToDelete = FindObjectsByType<Boid>(FindObjectsInactive.Include, FindObjectsSortMode.None);
 
         for (int i = 0; i < boidsToDelete.Length; i++)
             Destroy(boidsToDelete[i].gameObject);
         
-        for (int i = 0; i < boidCount; i++)
+        for (int i = 0; i < numberOfBoidsToSpawn; i++)
         {
             Vector3 randomPosWithinBounds = new(Random.Range(-spawnXBounds, spawnXBounds), Random.Range(-spawnYBounds, spawnYBounds), 0f);
             Vector3 randomEulerRotation = new(0f, 0f, Random.Range(0f, 360f));
