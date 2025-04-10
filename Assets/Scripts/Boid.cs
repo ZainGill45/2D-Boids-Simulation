@@ -16,4 +16,17 @@ public class Boid : MonoBehaviour
     {
         DebugDrawer.boids.Remove(this);
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        Debug.Log($"Boid discreet collision with {other.gameObject.name}");
+    }
+    private void OnCollisionStay(Collision other)
+    {
+        Debug.Log($"Boid continuous collision with {other.gameObject.name}");
+    }
+    private void OnCollisionExit(Collision other)
+    {
+        Debug.Log($"Boid discreet exit with {other.gameObject.name}");
+    }
 }

@@ -5,7 +5,7 @@ public class DebugDrawer : MonoBehaviour
 {
     [field: Header("General Settings")]
     [field: SerializeField] private float lineLength = 0.5f;
-    [field: SerializeField] private float xBounds = 6f;
+    [field: SerializeField] private float xBounds = 8f;
     [field: SerializeField] private float yBounds = 4f;
 
     public static List<Boid> boids;
@@ -26,9 +26,14 @@ public class DebugDrawer : MonoBehaviour
     {
         Gizmos.color = Color.red;
         
-        Gizmos.DrawWireSphere(transform.position + transform.right * xBounds, 0.25f);
-        Gizmos.DrawWireSphere(transform.position + -transform.right * xBounds, 0.25f);
-        Gizmos.DrawWireSphere(transform.position + transform.up * yBounds, 0.25f);
-        Gizmos.DrawWireSphere(transform.position + -transform.up * yBounds, 0.25f);
+        Vector3 rightVerticalLineStartPosition = transform.position + transform.right * xBounds;
+        Vector3 leftVerticalLineStartPosition = transform.position - transform.right * xBounds;
+        Vector3 upperHorizontalLineStartPosition = transform.position + transform.up * yBounds;
+        Vector3 lowerHorizontalLineStartPosition = transform.position - transform.up * yBounds;
+
+        Gizmos.DrawLine(leftVerticalLineStartPosition + Vector3.down * yBounds, leftVerticalLineStartPosition + Vector3.up * yBounds);
+        Gizmos.DrawLine(rightVerticalLineStartPosition + Vector3.down * yBounds, rightVerticalLineStartPosition + Vector3.up * yBounds);
+        Gizmos.DrawLine(upperHorizontalLineStartPosition + Vector3.left * xBounds, upperHorizontalLineStartPosition + Vector3.right * xBounds);
+        Gizmos.DrawLine(lowerHorizontalLineStartPosition + Vector3.left * xBounds, lowerHorizontalLineStartPosition + Vector3.right * xBounds);
     }
 }

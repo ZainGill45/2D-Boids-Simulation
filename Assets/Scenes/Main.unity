@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineLength: 0.5
-  xBounds: 8
-  yBounds: 4
+  xBounds: 8.25
+  yBounds: 4.35
 --- !u!114 &336487445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,8 +182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boidPrefab: {fileID: 4599108509270218401, guid: 87c7dd749a0906f4abb1bff164e134d7, type: 3}
-  spawnXBounds: 8
-  spawnYBounds: 4
+  spawnXBounds: 8.25
+  spawnYBounds: 4.35
   boidCount: 32
 --- !u!1 &519420028
 GameObject:
