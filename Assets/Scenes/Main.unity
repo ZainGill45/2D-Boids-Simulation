@@ -200,7 +200,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.2509804, g: 0.2509804, b: 0.2509804, a: 1}
+  m_BackGroundColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -301,9 +301,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boidSprite: {fileID: 5685415954165986859, guid: 3bd2af6fb653d554bb7ac1c56b6c0de6, type: 3}
-  numberOfBoids: 16
-  arenaXBounds: 8
-  arenaYBounds: 4
+  numberOfBoids: 128
+  arenaXBounds: 8.8
+  arenaYBounds: 5
+  minSpeed: 1
+  maxSpeed: 8
+  perceptionRadius: 3
+  separationRadius: 0.6
+  maxSteerForce: 5
+  separationWeight: 2
+  alignmentWeight: 1
+  cohesionWeight: 0.5
+  boundaryWeight: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
