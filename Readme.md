@@ -17,6 +17,7 @@ This simulation implements the three fundamental rules described by Reynolds:
 ### Prerequisites
 * [Unity Hub](https://unity.com/download)
 * Unity Editor (Developed with version 6.1.0, but likely compatible with most recent LTS versions)
+* Git LFS
 
 ### How to Use
 1.  **Clone or Download:** Get a copy of this repository.
