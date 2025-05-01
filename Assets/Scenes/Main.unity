@@ -300,6 +300,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c274640ff0820a248a9e101f95e64065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boidSprite: {fileID: 5685415954165986859, guid: 3bd2af6fb653d554bb7ac1c56b6c0de6, type: 3}
+  numberOfBoids: 16
+  arenaXBounds: 8
+  arenaYBounds: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
