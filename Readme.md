@@ -1,3 +1,5 @@
+https://github.com/user-attachments/assets/a780592b-cf4f-4111-9247-6f7dc7f6daf2
+
 # Unity Boid Simulation
 A simple implementation of Craig Reynolds' Boids algorithm for flocking behavior, built entirely within Unity using C#. This project demonstrates the classic three rules of flocking (Separation, Alignment, Cohesion) managed by a single centralized simulation script.
 
