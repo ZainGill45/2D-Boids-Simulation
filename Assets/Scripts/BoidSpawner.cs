@@ -24,7 +24,7 @@ public class BoidSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             // Spawn a boid at the where ever the user clicked the mouse
             Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);

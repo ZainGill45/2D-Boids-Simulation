@@ -184,7 +184,7 @@ MonoBehaviour:
   boidPrefab: {fileID: 4599108509270218401, guid: 87c7dd749a0906f4abb1bff164e134d7, type: 3}
   spawnXBounds: 8.25
   spawnYBounds: 4.35
-  boidCount: 0
+  boidCount: 32
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 545245609}
   - component: {fileID: 545245608}
   - component: {fileID: 545245610}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Right Level Bounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 582153373}
   - component: {fileID: 582153372}
   - component: {fileID: 582153374}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bottom Level Bounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +719,7 @@ GameObject:
   - component: {fileID: 811425118}
   - component: {fileID: 811425117}
   - component: {fileID: 811425119}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Top Level Bounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 982319238}
   - component: {fileID: 982319237}
   - component: {fileID: 982319239}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Left Level Bounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
